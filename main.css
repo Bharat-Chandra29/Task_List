@@ -1,0 +1,362 @@
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #ec4848;
+	--purple: #8B5CF6;
+	--light: #EEE;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira sans", sans-serif;
+}
+
+body {
+	background-color: #111;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #FFF;
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1{ 
+	font-size: 2.5rem;
+	font-weight: 300;
+	color: whitesmoke;
+	margin-bottom: 1rem;
+}
+
+#new-task-form {
+	display: flex;;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	background-color: var(--darker);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: var(--light);
+	font-size: 1.25rem;
+}
+
+#new-task-input::placeholder {
+	color: white;
+}
+
+#new-task-submit {
+	color: black;
+	font-size: 1.25rem;
+	font-weight: 700;
+	background-image: linear-gradient(to right, var(--pink), var(--purple));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+#new-task-submit:hover {
+	opacity: 0.8;
+}
+
+#new-task-submit:active {
+	opacity: 0.6;
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-size: 50px;
+	font-weight:100;
+	color: red;
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	margin-top: 1.75rem;
+	display: flex;
+	justify-content: space-between;
+	background-color: rgb(39, 22, 34);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: white;
+	font-size: 2.125rem;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color:white;
+}
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions button:hover {
+	opacity: 0.8;
+}
+
+.task .actions button:active {
+	opacity: 0.6;
+}
+
+.task .actions .edit {
+	font-family: 'Moirai One', cursive;
+	background-image: linear-gradient(to right, var(--pink), var(--purple));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+	font-family: 'Moirai One', cursive;
+	color: crimson;
+}
+
+.image {
+	display: grid;
+}
+.container {
+    width: 100%;
+    min-height: 10rem;
+    backdrop-filter: blur(1px);
+    pointer-events: none;
+    text-align: center;
+  }
+  .container nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 40px;
+    height: 100px;
+    align-items: center;
+  }
+  .container nav h1 { 
+	font-family: 'Playfair Display SC', serif;
+	font-size: 3.5rem;
+	font-weight: 300;
+	animation: lights 5s 750ms linear infinite;
+font-size: 75px ;
+  }
+ .container nav h1 span{
+	font-family: 'Playfair Display SC', serif;
+    font-size: 75px;
+    color: #ff1900;
+  }
+  .container nav ul{
+    display: flex;
+  }
+  .container nav ul li{
+    background-color: #111;
+    position: relative;
+    list-style: none;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 12px 18px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: .3s;
+    overflow: hidden;
+  }
+  .container nav ul li::after{
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 0%;
+    height: 3px;
+    left: 50%;
+    background: #ff1900;
+    transform: translateX(-50%);
+    transition: .3s;
+  }
+
+  .container nav ul li:hover{
+    color: #ff1900;
+  }
+  
+  .container nav ul li:hover::after{
+    width: 80%;}
+	@keyframes lights {
+		0% {
+		  color: hsl(0, 39%, 80%);
+		  text-shadow: 0 0 1em hsla(0, 100%, 50%, 0.2),
+			0 0 0.125em hsla(0, 100%, 60%, 0.3),
+			-1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+			1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+		}
+	  
+		30% {
+		  color: hsl(0, 80%, 90%);
+		  text-shadow: 0 0 1em hsla(0, 100%, 50%, 0.866),
+			0 0 0.125em hsla(0, 100%, 60%, 0.334),
+			-0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+			0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+		}
+	  
+		40% {
+		  color: hsl(0, 100%, 95%);
+		  text-shadow: 0 0 1em hsla(0, 100%, 50%, 0.999),
+			0 0 0.125em hsla(320, 100%, 90%, 0.5),
+			-0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+			0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+		}
+	  
+		70% {
+		  color: hsl(0, 80%, 90%);
+		  text-shadow: 0 0 1em hsl(0, 100%, 50%),
+			0 0 0.125em hsla(0, 100%, 60%, 0.373),
+			0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+			-0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+		}
+	  
+		100% {
+		  color: hsl(0, 39%, 80%);
+		  text-shadow: 0 0 1em hsl(0, 100%, 50%),
+			0 0 0.125em hsla(0, 100%, 60%, 0.3),
+			1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+			-1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+		}
+	  }	  
+	  
+      .tsk {
+        width: 9.25em;
+        height: 1.15em;
+        font-size: 4rem;
+        font-family: sans-serif;
+        position: relative;
+      }
+
+      .tsk div {
+        position: absolute;
+        left: 0;
+        text-transform: uppercase;
+        width: 100%;
+        display: block;
+        text-align:center;
+      }
+
+      .upper {
+        top: 0;
+        height: 52.5%;
+        color: #fff;
+        overflow: hidden;
+        z-index: 3;
+        animation: moveUp 2.5s ease-in-out 1000;
+        background-color: #121212;
+        
+      }
+
+      .lower {
+        bottom: 0;
+        height: 100%;
+        background: linear-gradient(180deg, #121212 52.5%, #fff 52.5%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        z-index: 1;
+        animation: moveDown 2.5s ease-in-out 1000;
+      }
+
+      .inside {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-40%);
+        text-align: center;
+        z-index: 2;
+        font-size: 1rem;
+        color: #dc143c;
+      }
+
+      @keyframes moveUp {
+        0%,
+        100% {
+          top: 0;
+        }
+
+        50%,
+        70% {
+          top: -45px;
+        }
+      }
+
+      @keyframes moveDown {
+        0%,
+        100% {
+          top: 0;
+        }
+
+        50%,
+        70% {
+          top: 30px;
+        }
+      }
+
+      @media (max-width: 424px) {
+        .container {
+          font-size: 2.5rem;
+          
+        }
+
+        .inside {
+          font-size: 0.75rem;
+        }
+      }
+
+      @media (max-width: 320px) {
+        .container {
+          font-size: 2rem;
+          
+        }
+
+        .inside {
+          font-size: 0.5rem;
+        }
+      }
+	  
